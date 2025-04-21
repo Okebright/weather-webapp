@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  --primary-color: rgba(2, 73, 167, 1);
+  --button-bg-color: black;
+  --black-clr: rgba(0, 0, 0, 1);
+  --black-clr-20: rgba(0, 0, 0, 0.2);
+  --black-clr-50: rgba(0, 0, 0, 0.5);
+  --black-clr-neutral: rgba(30, 30, 30, 1);
+  --background-clr-2: rgba(239, 246, 255, 1);
+  --white-clr: rgba(255, 255, 255, 1);
+}
+
+h3{
+    font-size: large;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: small;
+}
+
+h6{
+    font-size: medium;
+}
+
+.title h3{
+    font-size: xx-large;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #e0edff, #cbe1fe);
+}
+
+.main {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  row-gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.search-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.search-input {
+  width: 60%;
+  height: 1.5rem;
+  outline: none;
+}
+
+.search-input input {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--black-clr-50);
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-input input:focus {
+  border-color: var(--primary-color);
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0.25rem var(--primary-color);
+}
+
+.search-btn {
+  width: fit-content;
+  height: 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--white-clr);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-bottom: -1rem;
+}
+
+.search-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search-btn {
+  background-color: var(--button-bg-color);
+}
+
+.weather-section {
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: 1rem;
+  padding: 2rem;
+  background-color: var(--white-clr);
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  border: 0.025rem solid var(--black-clr-20);
+  box-shadow: 0 0 0.5rem var(--black-clr-20);
+}
+
+.first-layer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 1rem;
+}
+
+.city {
+  color: var(--black-clr-neutral);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.temp {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.second-layer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--black-clr-neutral);
+}
+
+.third-layer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 1rem;
+}
+
+.humidity,
+.windspeed {
+  width: 42%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--background-clr-2);
+  border-radius: 0.5rem;
+}
+
+.humidity h6,
+.windspeed h6 {
+  color: var(--black-clr-neutral);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+@media (max-width: 480px) {
+    .main{
+        width: 70%;
+    }
+
+    .title{
+        margin-bottom: 1rem;
+    }
+  .weather-section {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .third-layer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .humidity,
+  .windspeed {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}

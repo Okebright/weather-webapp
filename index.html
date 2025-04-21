@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="title"><h3>Weather App</h3></div>
+      <div class="search-section">
+        <div class="search-input" ><input id="search-input" type="text" /></div>
+        <div class="search-btn" id="search-btn">
+          <svg
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 20L15.65 15.65M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
+              stroke="white"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="weather-section">
+        <div class="first-layer">
+          <div class="city" id="city">
+            <h3>New york</h3>
+          </div>
+          <div class="temp">
+            <h2>8°C</h2>
+          </div>
+        </div>
+        <div class="second-layer">
+          <div class="weather-icon" id="weather-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_18)">
+                <path d="M36 20H33.48C32.7317 17.102 31.1856 14.472 29.0173 12.4088C26.849 10.3456 24.1454 8.93198 21.2138 8.32855C18.2822 7.72512 15.2402 7.95608 12.4333 8.99518C9.6264 10.0343 7.16726 11.8399 5.33528 14.2068C3.50331 16.5737 2.37196 19.407 2.06979 22.3847C1.76763 25.3625 2.30676 28.3653 3.62593 31.0519C4.9451 33.7386 6.99141 36.0014 9.53234 37.5831C12.0733 39.1649 15.0069 40.0022 18 40H36C38.6521 40 41.1957 38.9464 43.071 37.0711C44.9464 35.1957 46 32.6522 46 30C46 27.3478 44.9464 24.8043 43.071 22.9289C41.1957 21.0536 38.6521 20 36 20Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_6_18">
+                <rect width="48" height="48" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+                
+          </div>
+          <div class="weather-name">
+            <h3>Cloudy</h3>
+          </div>
+        </div>
+        <div class="third-layer">
+          <div class="humidity">
+            <div class="humidity-title">
+              <p>Humidity</p>
+            </div>
+            <div class="humidity-data" id="humidity-data">
+              <h6>75%</h6>
+            </div>
+          </div>
+          <div class="windspeed">
+            <div class="windspeed-title">
+              <p>Windspeed</p>
+            </div>
+            <div class="windspeed-data">
+              <h6>12km/hr</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
