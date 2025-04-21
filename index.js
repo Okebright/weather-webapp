@@ -1,4 +1,4 @@
-
+//API parameters
 const apiKey = "2012f74f9da9d705a460adcbbd0c6442";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 let city = document.getElementById('city');
@@ -16,12 +16,23 @@ let searchButton = document.getElementById('search-btn');
 // Get the weather container
 let weatherIcon = document.getElementById('weather-icon');
 
+//Get notification elements
+let notification = document.getElementById('notification');
+
+// Get the error message element
+let errorMessage = document.querySelector(".error");
+
+// Get the weather section element
+let weatherSection = document.querySelector(".weather-section");
 
 
 // Focus on the input field when the page loads
 window.onload = function () {
     searchInput.focus();
+    notification.style.visibility = "visible";
 };
+
+
 
 // Add an event listener to the input field to listen for the Enter key
 searchInput.addEventListener("keypress", function (event) {
@@ -38,8 +49,10 @@ async function checkWeather(city) {
 
         if (!response.ok) {
             if (response.status === 404) {
-                document.querySelector(".error").style.display = "block";
-                document.querySelector(".weather").style.display = "none";
+                document.querySelector(".error").style.visibility = "visible";
+                document.querySelector(".weather-section").style.visibility = "hidden";
+                notification.style.visibility = "hidden";
+
             } else {
                 console.error(`Error: Received status code ${response.status}`);
                 console.log("An unexpected error occurred. Please try again later.");
@@ -74,8 +87,12 @@ async function checkWeather(city) {
             weatherIcon.src = "images/mist.png";
         }
 
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
+        document.querySelector(".weather-section").style.visibility = "visible";
+        document.querySelector(".error").style.visibility = "hidden";
+        notification.style.visibility = "hidden";
+        weatherSection.style.visibility = "visible";
+        weatherSection.style.display = "block"; // Show the weather section
+        searchInput.value = ""; // Clear the input field after fetching data
     
     } catch (error) {
         console.error("Error: Unable to fetch weather data", error);
